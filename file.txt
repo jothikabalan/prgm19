@@ -1,1 +1,11 @@
+#!/bin/bash
 
+echo"Enter log file name:"
+read logfile
+
+if [ -f "logfile" ]; then
+ errors=$(grep -i"error" "$logfile"; | wc -l)
+ echo "Total errors: $errors"
+else
+ echo "File not found"
+fi
